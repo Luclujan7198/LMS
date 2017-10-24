@@ -7,3 +7,6 @@
 
 # recuperar o virtualenv (após criação do virtualenv local)
 * pip install -r requirements.md (com o console na pasta do arquivo requirements)
+
+# Site para estuda design patterns do Django
+* http://agiliq.com/books/djangodesignpatterns/
