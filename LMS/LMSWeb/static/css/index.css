@@ -1,0 +1,9 @@
+.banner-home { 
+    height: 120px;
+    width: 100%;
+}
+
+.banner-home img {
+    -webkit-filter: grayscale(50%) brightness(80%);
+    filter: grayscale(50%) brightness(80%);
+}

@@ -1,0 +1,22 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+    Home - {{block.super}}
+{% endblock %}
+
+{% block container %}
+    <div class="banner-home">        
+        <img src="{% static 'img/banner-home.jpg' %}" class="img-responsive" />
+    </div>
+
+    <div class="content">
+
+    </div>
+{% endblock %}

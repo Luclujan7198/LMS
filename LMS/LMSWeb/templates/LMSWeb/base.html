@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} LMS {% endblock %}</title>
+
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    {% block css %} {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><a href="index.html"><img src="{% static 'img/logo.png' %}" /></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="navbar-toggle"><a href="javascript:void(0)" onclick="toggleNavBar()" class="toggle">&#9776;</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block container %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>©Copyright - Todos os direitos reservados - 2017</p>
+    </footer>
+
+    <script type="text/javascript">
+        function toggleNavBar() {
+
+        }
+    </script>
+</body>
+</html>
