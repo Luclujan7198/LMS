@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
     font-family: 'Open Sans', sans-serif;;
 }
 
@@ -33,61 +33,97 @@ footer {
 }
 
 /* NAVBAR */
-nav .logo a {
-    text-align: center;
-    padding: 5px 0px;
-    width: 150px;
-}
-nav .logo a:hover {
-    text-align: center;
-    padding: 5px 0px;
-    width: 150px;
-    background-color: #333;
+nav {
+    background-color: #f3f3f3;  
 }
 
-nav .logo a img {
-    height: auto; width: 100%;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-nav ul li {
+nav .navbar-header .logo {
     float: left;
 }
 
-nav ul li a {
+nav .navbar-header .logo a {
     display: block;
-    color: white;
+    color: #333;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav .navbar-header .logo a:hover {
+    background-color: #f3f3f3;
+    text-decoration: none;
+}
+
+nav .navbar-header .logo a img {
+    height: 29px; width: auto;
+}
+
+nav .navbar-header .navbar-toggle {
+    font-size: 13px;
+    float: right;
+    display: none;
+}
+
+nav .navbar-header .navbar-toggle a {
+    display: block;
+    color: #333;
     text-align: center;
     padding: 21px 16px;
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    background-color: #111;
+nav .navbar-header .navbar-toggle a:hover {
+    background-color: #ddd;
 }
 
-nav ul li.navbar-toggle {
-    font-size: 13px;
-    float: right;
+@-webkit-keyframes openAnimation {
+    from { max-height: 0; }
+      to { max-height: 500px; }
+}  
+@keyframes openAnimation {
+    from { max-height: 0; }
+      to { max-height: 500px; }
 }
 
-nav .navbar-toggle {
-    display: none;
+nav .nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    animation: openAnimation .5s;
+}
+
+nav .nav-menu li {
+    float: left;
+}
+
+nav .nav-menu li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 21px 16px;
+    text-decoration: none;
+}
+
+nav .nav-menu li a:hover {
+    background-color: #ddd;
 }
 
 @media screen and (max-width: 600px) {
-    nav ul li:not(:first-child) {
+    nav .nav-menu li {
+        float: none;
+    }
+
+    .menu-hidden {
         display: none;
     }
 
-    nav ul li.navbar-toggle {
+    .navbar-header {
+        display: block;
+        height: 61px;
+    }
+
+    nav .navbar-header .navbar-toggle {
         display: block;
     }
 }

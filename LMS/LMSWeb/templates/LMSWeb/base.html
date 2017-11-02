@@ -13,13 +13,21 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li class="logo"><a href="index.html"><img src="{% static 'img/logo.png' %}" /></a></li>
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'img/logo_orion.png' %}" />
+                    </a>
+                </div>
+                <div class="navbar-toggle">
+                    <a href="javascript:void(0)" onclick="toggleNavBar()" class="toggle">&#9776;</a>
+                </div>
+            </div>
+            <ul class="nav-menu menu-hidden" id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li class="navbar-toggle"><a href="javascript:void(0)" onclick="toggleNavBar()" class="toggle">&#9776;</a></li> 
             </ul>
         </nav>
     </header>
@@ -36,7 +44,11 @@
 
     <script type="text/javascript">
         function toggleNavBar() {
-
+            var menu = document.getElementById('nav-menu');
+            if (menu.classList.contains('menu-hidden'))
+                menu.classList.remove('menu-hidden');
+            else
+                menu.classList.add('menu-hidden');
         }
     </script>
 </body>
