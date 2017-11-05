@@ -28,6 +28,7 @@
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li class="nav-menu-right"><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -49,6 +50,33 @@
                 menu.classList.remove('menu-hidden');
             else
                 menu.classList.add('menu-hidden');
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("avaliacao");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "flex"; 
+          dots[slideIndex-1].className += " active";
         }
     </script>
 </body>

@@ -1,10 +1,7 @@
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
-    /* background: #f7f7f7; */
     font-family: 'Open Sans', sans-serif;;
 }
 
@@ -18,13 +15,9 @@ a {
     font-weight: bold;
 }
 
-a:visited {
-    color: darkblue;
-}
+a:visited { color: darkblue; }
 
-.content {
-    padding: 15px;
-}
+.content { padding: 15px; }
 
 footer {
     background: gray;
@@ -33,13 +26,9 @@ footer {
 }
 
 /* NAVBAR */
-nav {
-    background-color: #f3f3f3;  
-}
+nav { background-color: #f3f3f3; }
 
-nav .navbar-header .logo {
-    float: left;
-}
+nav .navbar-header .logo { float: left; }
 
 nav .navbar-header .logo a {
     display: block;
@@ -54,7 +43,8 @@ nav .navbar-header .logo a:hover {
 }
 
 nav .navbar-header .logo a img {
-    height: 29px; width: auto;
+    height: 29px; 
+    width: auto;
 }
 
 nav .navbar-header .navbar-toggle {
@@ -71,9 +61,7 @@ nav .navbar-header .navbar-toggle a {
     text-decoration: none;
 }
 
-nav .navbar-header .navbar-toggle a:hover {
-    background-color: #ddd;
-}
+nav .navbar-header .navbar-toggle a:hover { background-color: #ddd; }
 
 @-webkit-keyframes openAnimation {
     from { max-height: 0; }
@@ -93,9 +81,9 @@ nav .nav-menu {
     animation: openAnimation .5s;
 }
 
-nav .nav-menu li {
-    float: left;
-}
+nav .nav-menu .nav-menu-right { float: right; }
+
+nav .nav-menu li { float: left; }
 
 nav .nav-menu li a {
     display: block;
@@ -110,21 +98,17 @@ nav .nav-menu li a:hover {
 }
 
 @media screen and (max-width: 600px) {
-    nav .nav-menu li {
-        float: none;
-    }
+    nav .nav-menu { width: 100%; }
+    
+    nav .nav-menu li, nav .nav-menu .nav-menu-right { float: none; }
 
-    .menu-hidden {
-        display: none;
-    }
+    .menu-hidden { display: none; }
 
     .navbar-header {
         display: block;
         height: 61px;
     }
 
-    nav .navbar-header .navbar-toggle {
-        display: block;
-    }
+    nav .navbar-header .navbar-toggle { display: block; }
 }
 /* FIM NAVBAR */
