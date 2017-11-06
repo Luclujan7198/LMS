@@ -1,0 +1,42 @@
+.banner-curso {
+    height: 220px;
+    width: 100%;
+    background-image: url('img/banner-cursos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+.banner-curso .block-text {
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.curso {
+    padding: 30px;
+}
+
+.curso .curso-info {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.curso .curso-info .curso-info-item {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.curso .curso-info .curso-info-item .field-title {
+    font-weight: bold;
+}
+
+.curso .curso-info .curso-info-item img,
+.curso .curso-info .curso-info-item .field-title {
+    margin-right: 5px;
+}

@@ -1,0 +1,45 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/curso.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+Cursos - {{block.super}}
+{% endblock %}
+
+{% block container %}
+<div class="banner-curso">
+    <div class="block-text">
+        <h1>Administração</h1>
+    </div>
+</div>
+
+<div class="curso">
+    <div class="curso-info">
+        <div class="curso-info-item">
+            <img src="{% static 'img/duracao-icon-color.png' %}" />
+            <span class="field-title">Duração:</span>
+            5 semestres
+        </div>
+
+        <div class="curso-info-item">
+            <img src="{% static 'img/modalidade-icon-color.png' %}" />
+            <span class="field-title">Modalidade:</span>
+            Presencial
+        </div>
+
+        <div class="curso-info-item">
+            <img src="{% static 'img/periodo-icon-color.png' %}" />
+            <span class="field-title">Periodo:</span>
+            matutino, noturno
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %} {% endblock %}
