@@ -15,7 +15,7 @@
         <nav>
             <div class="navbar-header">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{% url 'LMSWeb:index' %}">
                         <img src="{% static 'img/logo_orion.png' %}" />
                     </a>
                 </div>
@@ -24,8 +24,8 @@
                 </div>
             </div>
             <ul class="nav-menu menu-hidden" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                {% comment %} <li><a href="{% url 'LMSWeb:cursos' %}">Cursos</a></li> {% endcomment %}
+                <li><a href="{% url 'LMSWeb:index' %}">Home</a></li>
+                <li><a href="{% url 'LMSWeb:cursos' %}">Cursos</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li class="nav-menu-right"><a href="login.html">Login</a></li>

@@ -16,6 +16,8 @@
 
 .curso {
     padding: 30px;
+    max-width: 800px;  
+    text-align: justify;
 }
 
 .curso .curso-info {
@@ -30,6 +32,7 @@
     align-items: center;
     font-size: 14px;
     flex-wrap: wrap;
+    padding: 5px 0;
 }
 
 .curso .curso-info .curso-info-item .field-title {
@@ -39,4 +42,41 @@
 .curso .curso-info .curso-info-item img,
 .curso .curso-info .curso-info-item .field-title {
     margin-right: 5px;
+}
+
+.curso .curso-info .curso-info-item img {
+    width: 16px; height: 16px;
+}
+
+.disciplinas h1 {
+    color: #3d4b67;
+}
+
+.disciplinas h3 {
+    background-color: #6a6f78;
+    color: white;
+    padding: 10px 6px;
+}
+
+.disciplinas ul {
+    list-style: none;
+    /* margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em; */
+}
+
+.disciplinas ul li {
+    text-decoration: none;
+    color: #333;
+    background-color: #f3f3f3;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 5px 0;
+    font-weight: bold;
+    text-indent: 0.5em;
+}
+
+.disciplinas ul li .bullet {
+    text-decoration: none;
+    color: #3d4b67;
 }
