@@ -5,6 +5,6 @@ app_name = 'LMS_Professor'
 
 
 urlpatterns = [
-    url(r'^testes/', views.teste, name='teste')
+    url(r'^testes/$', views.teste, name='teste'),
 
 ]
