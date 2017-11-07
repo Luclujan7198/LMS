@@ -1,0 +1,38 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+<link href="{% static 'css/teste.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}
+Testes - {{block.super}}
+{% endblock %}
+{% block container %}
+<div class="container">
+        <form action="" method="POST" class="form_teste">
+                <h1>Questão 1 </h1>
+                <div class="container_enunciado">
+                        <span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed posuere mauris. Mauris sit amet lobortis neque, et ornare est. Quisque molestie elit a tincidunt dapibus. Cras ut mattis lacus, id mattis enim. Maecenas et fermentum turpis. Integer eu felis in magna faucibus euismod. Fusce dui ante, blandit eget quam ac, ullamcorper rhoncus enim. Phasellus sollicitudin tellus ac lectus sodales venenatis. Pellentesque auctor orci vel accumsan varius.</p></span>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_1"><input type="radio" name="questoes" id="quest_1"><span>Lorem ipsum dolor sit amet</span></label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_2"><input type="radio" name="questoes" id="quest_2"><span>Lorem ipsum dolor sit amet</span></label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_3"><input type="radio" name="questoes" id="quest_3"><span>Lorem ipsum dolor sit amet</span></label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_4"><input type="radio" name="questoes" id="quest_4"><span>Lorem ipsum dolor sit amet</span></label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <input type="submit" name="fSubmit" id="fSubmit" value="Proxima" class="fSubmit"><br/>
+                </div>
+        </form>
+</div >
+
+{% endblock %}
