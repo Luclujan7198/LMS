@@ -1,9 +1,150 @@
-.banner-home { 
-    height: 120px;
+.banner-home {
+    height: 340px;
     width: 100%;
+    background-image: url('img/banner-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.banner-home img {
-    -webkit-filter: grayscale(50%) brightness(80%);
-    filter: grayscale(50%) brightness(80%);
+.block-text {
+    text-align: center;
+    color: white;
+    height: 360px;
+    padding-top: 120px;
 }
+
+.block-text h1 {
+    text-shadow: 1px 1px 5px #000;
+}
+
+.btn-cta {
+    border: 0;
+    color: white;
+    background-color: #6a6f78;
+    padding: 10px 15px;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 13.3333px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a.btn-cta {
+    color: white;
+}
+
+.btn-cta:hover {
+    background-color: #3d4b67;
+}
+
+.btn-cta:focus, .btn-cta:active {
+    background-color: #2c3954;
+}
+
+.items-cta {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.item-cta {
+    padding: 20px 0;
+
+}
+
+.item-cta-content {
+    background-color: #f3f3f3;
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px #ddd, -5px 5px 20px #ddd;
+}
+
+.item-cta p {
+    max-width: 300px;
+}
+
+.item-cta img {
+    background-color: #6a6f78;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    top: 30px;
+    box-shadow: 1px 1px 5px #aaa, -1px 1px 5px #aaa;
+    transition: .5s;
+}
+
+
+.avaliacao-alunos {
+    background-color: #f3f3f3;  
+    padding: 20px 30px;
+    position: relative;
+    margin: auto;
+    height: 240px;
+}
+
+.avaliacao-alunos .avaliacao {
+    display: none;
+}
+
+.avaliacao-alunos .avaliacao {
+    /* display: flex; */
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    color: #6a6f78;
+} 
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    color: #3d4b67;
+}
+
+.avaliacao-alunos .avaliacao img {
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.avaliacao-alunos .avaliacao .texto-avaliacao p {
+    max-width: 500px;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+

@@ -1,0 +1,54 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/contato.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+Contato - {{block.super}}
+{% endblock %}
+
+{% block container %}
+<div class="banner-contato">
+    <div class="block-text">
+        <h1>Contato</h1>
+    </div>
+</div>
+
+<div class="contato">
+    <form method="post">
+        <h3>Entre em contato</h3>
+        <div class="form-container">
+            <div class="form-row">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" class="form-input" autofocus/>
+            </div>
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-input" />
+            </div>
+            <div class="form-row">
+                <label for="assunto">Asunto:</label>
+                <select name="assunto" class="form-input">
+                    <option value="">-- Selecione o assunto --</option>
+                    <option value="ads">Informação sobre as aulas</option>
+                    <option value="redes">Informações sobre as disciplinas</option>
+                    <option value="adm">Outro assunto</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" class="form-input"></textarea>
+            </div>
+            <div class="form-row">
+                <button type="submit" class="form-button form-button-principal">Enviar</button>
+                <button type="button" class="form-button">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

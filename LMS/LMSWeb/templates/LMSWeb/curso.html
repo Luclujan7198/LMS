@@ -1,0 +1,75 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/curso.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+Curso - {{block.super}}
+{% endblock %}
+
+{% block container %}
+<div class="banner-curso">
+    <div class="block-text">
+        <h1>Administração</h1>
+    </div>
+</div>
+
+<div class="curso">
+    <div class="curso-info">
+        <div class="curso-info-item">
+            <img src="{% static 'img/duracao-icon-color.png' %}" />
+            <span class="field-title">Duração:</span>
+            5 semestres
+        </div>
+
+        <div class="curso-info-item">
+            <img src="{% static 'img/modalidade-icon-color.png' %}" />
+            <span class="field-title">Modalidade:</span>
+            Presencial
+        </div>
+
+        <div class="curso-info-item">
+            <img src="{% static 'img/periodo-icon-color.png' %}" />
+            <span class="field-title">Periodo:</span>
+            matutino, noturno
+        </div>
+    </div>
+    <hr />
+    <div class="curso-descricao">
+        <p>O aluno será habilitado como bacharel, com habilidades, atitudes e conhecimentos para se diferenciar em um mercado de trabalho em constante evolução. O futuro administrador será competitivo em atividades ligadas à direção de organizações de qualquer porte – seja em sua criação e definição, como empreendedor, ou na execução de seus objetivos preestabelecidos, como especialista.</p>
+    </div>
+    <hr />
+    <div class="disciplinas">
+        <h1>Disciplinas</h1>
+        <div class="disciplina">
+            <h3>1º Semestre</h3>
+            <ul>
+                <li>Comunicação e Expressão</li>
+                <li>Fundamentos da administração</li>
+                <li>Macroeconomia</li>
+                <li>Matemática Aplicada</li>
+                <li>Modelo de Negócios e Empreendedorismo</li>
+                <li>Pensamento Crítico e Ética</li>
+            </ul>
+        </div>
+        <div class="disciplina">
+            <h3>2º Semestre</h3>
+            <ul>
+                <li>Comunicação e Expressão</li>
+                <li>Fundamentos da administração</li>
+                <li>Macroeconomia</li>
+                <li>Matemática Aplicada</li>
+                <li>Modelo de Negócios e Empreendedorismo</li>
+                <li>Pensamento Crítico e Ética</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %} <script src="{% static 'js/accordion.js' %}"></script> {% endblock %}
