@@ -1,0 +1,62 @@
+.banner-cursos {
+    height: 220px;
+    width: 100%;
+    background-image: url('img/banner-cursos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+.banner-cursos .block-text {
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    justify-content: flex-start;
+}
+
+.cursos .curso {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-top: 5px solid #6a6f78;
+    flex: 0 1 300px;
+}
+
+.cursos .curso h4 a {
+    text-decoration: none;
+} 
+
+.cursos .curso .curso-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-top: 8px;
+}
+
+.cursos .curso .curso-info-item img, 
+.cursos .curso .curso-info-item span { 
+    margin-right: 5px;
+}
+
+.cursos .curso .curso-info-item img {
+    width: 16px;
+}
+
+.cursos .curso .curso-info-item .field-title {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .cursos {
+        justify-content: center;
+    }
+}
