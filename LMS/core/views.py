@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import Curso
+from .models import Curso
 
 # Create your views here.
 def cadastro_cursos(request):
