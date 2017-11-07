@@ -11,27 +11,28 @@
 Testes - {{block.super}}
 {% endblock %}
 {% block container %}
-<form method="POST">
-    <label for="Question">Questão 1 </label>
-    <div class="enunciado">
-        <p>---------------- Questao ---------------------</p>
-    </div>
-    <div class="alternativas_questoes">
-            <label for="questoes"><input type="radio" name="questoes" id="quest_1">questao</label><br/>
-    </div>
-    <div class="alternativas_questoes">
-            <label for="questoes"><input type="radio" name="questoes" id="quest_2">questao</label><br/>
-    </div>
-    <div class="alternativas_questoes">
-            <label for="questoes"><input type="radio" name="questoes" id="quest_3">questao</label><br/>
-    </div>
-    <div class="alternativas_questoes">
-            <label for="questoes"><input type="radio" name="questoes" id="quest_4">questao</label><br/>
-    </div>
-    <div class="alternativas_questoes">
-            <input type="submit" name="fSubmit" id="fSubmit" value="Proxima"><br/>
-    </div>
-</form>
-
+<div class="container">
+        <form method="POST">
+                <label for="Question">Questão 1 </label>
+                <div class="enunciado">
+                        <p>---------------- Questao ---------------------</p>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_1"><input type="radio" name="questoes" id="quest_1">questao</label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_2"><input type="radio" name="questoes" id="quest_2">questao</label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_3"><input type="radio" name="questoes" id="quest_3">questao</label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <label for="quest_4"><input type="radio" name="questoes" id="quest_4">questao</label><br/>
+                </div>
+                <div class="alternativas_questoes">
+                        <input type="submit" name="fSubmit" id="fSubmit" value="Proxima"><br/>
+                </div>
+        </form>
+</div >
 
 {% endblock %}
