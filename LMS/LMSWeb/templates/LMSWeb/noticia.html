@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block css %}
-<link href="{% static 'css/noticias.css' %}" rel="stylesheet" />
+<link href="{% static 'css/noticia.css' %}" rel="stylesheet" />
 {% endblock %}
 
 
@@ -12,7 +12,7 @@ Notícias - {{block.super}}
 {% endblock %}
 
 {% block container %}
-<div class="banner-noticias">
+<div class="banner-noticia">
     <div class="block-text">
         <h1>Notícias</h1>
     </div>
@@ -20,20 +20,15 @@ Notícias - {{block.super}}
 
 <div class="noticias">
     <article class="noticia">
-        <h3><a href="{% url 'LMSWeb:noticia' 1 %}">Impacta é reconhecida como a melhor entre as faculdades de tecnologia</a></h3>
+        <h3>Impacta é reconhecida como a melhor entre as faculdades de tecnologia</h3>
         <img src="{% static 'img/noticias/noticia1.png' %}" />
-        <p>{% lorem 1 %}</p>
-        <p><a href="{% url 'LMSWeb:noticia' 1 %}">Leia mais...</a></p>
-    </article>
-
-    <article class="noticia">
-        <h3><a href="#">Novo curso: Redes de computadores</a></h3>
-        <img src="{% static 'img/noticias/noticia2.png' %}" />
-        <p>{% lorem 1 %}</p>
-        <p><a href="#">Leia mais...</a></p>
+        <div class="texto">
+            <p>{% lorem 1 %}</p>
+            <p>{% lorem 2 %}</p>
+            <p>{% lorem 2 %}</p>
+            <p>{% lorem 1 %}</p>
+        </div>
     </article>
 </div>
 
 {% endblock %}
-
-{% block js %} <script src="{% static 'js/accordion.js' %}"></script> {% endblock %}

@@ -20,13 +20,16 @@
 }
 
 .noticias .noticia {
-    border: 0.5px solid #ddd;
     padding: 20px;
+    border: 0.5px solid #ddd;
     border-radius: 5px;
     box-shadow: 3px 3px 10px #ddd, -3px 3px 10px #ddd;
-    text-align: justify;
     border-top: 5px solid #6a6f78;
     margin-bottom: 30px;
+}
+
+.noticias .noticia .texto {
+    text-align: justify;    
 }
 
 .noticias .noticia img {
