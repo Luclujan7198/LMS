@@ -52,20 +52,25 @@
     color: #3d4b67;
 }
 
-.disciplinas h3 {
+
+.disciplinas .disciplina {
+    margin-bottom: 30px;
+}
+
+.disciplinas .disciplina h3 {
     background-color: #6a6f78;
     color: white;
     padding: 10px 6px;
 }
 
-.disciplinas ul {
+.disciplinas .disciplina ul {
     list-style: none;
-    /* margin-left: 0;
-    padding-left: 1em;
-    text-indent: -1em; */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0px;
 }
 
-.disciplinas ul li {
+.disciplinas .disciplina ul li {
     text-decoration: none;
     color: #333;
     background-color: #f3f3f3;
@@ -73,10 +78,11 @@
     padding-bottom: 7px;
     margin: 5px 0;
     font-weight: bold;
-    text-indent: 0.5em;
+    text-align: left;
+    padding-left: 10px;
 }
 
-.disciplinas ul li .bullet {
+.disciplinas .disciplina ul li .bullet {
     text-decoration: none;
     color: #3d4b67;
 }
