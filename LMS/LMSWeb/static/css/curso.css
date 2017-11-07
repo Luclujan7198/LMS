@@ -1,0 +1,88 @@
+.banner-curso {
+    height: 220px;
+    width: 100%;
+    background-image: url('img/banner-cursos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+.banner-curso .block-text {
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.curso {
+    padding: 30px;
+    max-width: 800px;  
+    text-align: justify;
+}
+
+.curso .curso-info {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.curso .curso-info .curso-info-item {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    font-size: 14px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.curso .curso-info .curso-info-item .field-title {
+    font-weight: bold;
+}
+
+.curso .curso-info .curso-info-item img,
+.curso .curso-info .curso-info-item .field-title {
+    margin-right: 5px;
+}
+
+.curso .curso-info .curso-info-item img {
+    width: 16px; height: 16px;
+}
+
+.disciplinas h1 {
+    color: #3d4b67;
+}
+
+
+.disciplinas .disciplina {
+    margin-bottom: 30px;
+}
+
+.disciplinas .disciplina h3 {
+    background-color: #6a6f78;
+    color: white;
+    padding: 10px 6px;
+}
+
+.disciplinas .disciplina ul {
+    list-style: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0px;
+}
+
+.disciplinas .disciplina ul li {
+    text-decoration: none;
+    color: #333;
+    background-color: #f3f3f3;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 5px 0;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.disciplinas .disciplina ul li .bullet {
+    text-decoration: none;
+    color: #3d4b67;
+}

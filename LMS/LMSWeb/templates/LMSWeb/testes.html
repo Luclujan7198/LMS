@@ -1,0 +1,37 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+<link href="{% static 'css/teste.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}
+Testes - {{block.super}}
+{% endblock %}
+{% block container %}
+<form method="POST">
+    <label for="Question">Questão 1 </label>
+    <div class="enunciado">
+        <p>---------------- Questao ---------------------</p>
+    </div>
+    <div class="alternativas_questoes">
+            <label for="questoes"><input type="radio" name="questoes" id="quest_1">questao</label><br/>
+    </div>
+    <div class="alternativas_questoes">
+            <label for="questoes"><input type="radio" name="questoes" id="quest_2">questao</label><br/>
+    </div>
+    <div class="alternativas_questoes">
+            <label for="questoes"><input type="radio" name="questoes" id="quest_3">questao</label><br/>
+    </div>
+    <div class="alternativas_questoes">
+            <label for="questoes"><input type="radio" name="questoes" id="quest_4">questao</label><br/>
+    </div>
+    <div class="alternativas_questoes">
+            <input type="submit" name="fSubmit" id="fSubmit" value="Proxima"><br/>
+    </div>
+</form>
+
+
+{% endblock %}

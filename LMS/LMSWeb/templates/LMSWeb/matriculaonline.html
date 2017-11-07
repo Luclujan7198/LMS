@@ -1,0 +1,62 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+<link href="{% static 'css/contato.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+    Home - {{block.super}}
+{% endblock %}
+
+{% block container %}
+
+
+    <div class="banner-matricula">
+        <div class="block-text">
+            <h1>O seu futuro é a nossa missão.</h1>
+            <a href="{% url 'LMSWeb:cursos' %}" class="btn-cta">Conheça nossos cursos</a>
+        </div>
+    </div>
+
+    
+<div class="contato">
+    <form method="post">
+        <h3>Matrícula Online</h3>
+        <div class="form-container">
+            <div class="form-row">
+                <label for="nome">Nome completo:</label>
+                <input type="text" name="nome" class="form-input" autofocus/>
+            </div>
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-input" />
+            </div>
+            <div class="form-row">
+                <label for="assunto">Telefone de contato:</label>
+                 <input type="text" name="Telefone" class="form-input" />
+
+            </div>
+            <div class="form-row">
+                <label for="mensagem">Foto do aluno: </label>
+                <input type="file" name="pic" accept="image/*">
+  
+            </div>
+            <div class="form-row">
+                <button type="submit" class="form-button form-button-principal">Enviar matrícula</button>
+               
+            </div>
+        </div>
+    </form>
+</div>
+
+    
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/slideshow.js' %}" type="text/javascript"></script>
+{% endblock %}
