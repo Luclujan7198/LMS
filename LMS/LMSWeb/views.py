@@ -17,6 +17,3 @@ def noticia(request, noticia_id):
 
 def contato(request):
     return render(request, 'LMSWeb/contato.html')
-def teste(request):
-    return render(request, 'LMSWeb/testes.html')
-
