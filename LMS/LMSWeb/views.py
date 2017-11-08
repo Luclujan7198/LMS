@@ -20,3 +20,7 @@ def contato(request):
 def teste(request):
     return render(request, 'LMSWeb/testes.html')
 
+def cancelamento_matricula(request):
+    return render(request, 'LMSWeb/cancelamento_matricula.html')
+
+
