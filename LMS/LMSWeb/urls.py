@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^noticias/$', views.noticias, name='noticias'),
     url(r'^noticias/(?P<noticia_id>[0-9]+)/$', views.noticia, name='noticia'),
     url(r'^contato/$', views.contato, name="contato"),    
-    url(r'^cancelamento_matricula/', views.cancelamento_matricula, name='cancelamento_matricula')
-
+    url(r'^cancelamento_matricula/', views.cancelamento_matricula, name='cancelamento_matricula'),
+    url(r'^matriculaonline/', views.matriculaonline, name='matriculaonline')
 ]

@@ -21,5 +21,5 @@ def contato(request):
 def cancelamento_matricula(request):
     return render(request, 'LMSWeb/cancelamento_matricula.html')
 
-
-
+def matriculaonline(request):
+    return render(request, 'LMSWeb/matriculaonline.html')
