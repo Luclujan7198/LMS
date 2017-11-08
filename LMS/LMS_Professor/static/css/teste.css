@@ -1,0 +1,31 @@
+form{
+    max-width: 650px;
+    padding: 25px 15px 25px 10px;
+    font-family: 'open-sans' 'sans-serif';
+    font-size: 18px;
+}
+h1{
+    padding: 0px 0px 10px 40px;
+    display: block;
+    margin: -10px -15px 30px -10px;
+}
+.container_enunciado{
+    padding: 0px 0px 10px 80px;
+    text-align: center;
+    color: #888;
+}
+.alternativas_questoes{
+    padding: 0px 0px 20px 40px;
+    text-shadow: 1px 1px 1px #FFF;
+}
+.fSubmit{
+    float: right;
+    background: deepskyblue;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+}
