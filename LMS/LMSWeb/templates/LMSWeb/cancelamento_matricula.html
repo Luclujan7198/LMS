@@ -1,0 +1,60 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/can_matricula.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block container %}
+<div class="banner-can">
+    <div class="block-text">
+        <h1>Cancelamento de Matriculas</h1>
+    </div>
+</div>
+
+<div class="canmatriculas">
+    <article class="canmatricula">
+    <form method="post">
+        <h3>Matricula</h3>
+        <div class="form-container">
+            <div class="form-row">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" class="form-input" value="Aquele que não deve ser nomeado" disabled="" autofocus/>
+            </div>
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" value="aquelequenaodevesernomeado2017@hotmail.com" disabled="" class="form-input" />
+            </div>
+            <div class="form-row">
+                <label for="Telefone">Telefone:</label>
+                <input type="text" name="Telefone" value="32244000" disabled="" class="form-input" />
+            </div>
+            <div class="form-row">
+                <label for="Curso">Curso:</label>
+                <input type="text" name="Curso" value="Analise e desenvolvimento de sistemas" disabled="" class="form-input" />
+            </div>
+            <div class="form-row">
+                <label for="status">Status:</label>
+                <select name="status" class="form-input">
+                    <option value="">Ativo</option>
+                    <option value="ads">Inativo</option>
+                </select>
+            </div>
+            
+            <div class="form-row">
+                <button type="submit" class="form-button form-button-principal">Enviar</button>
+                
+            </div>
+        </div>
+    </form>
+</div>
+    </article>
+</div>
+
+{% endblock %}

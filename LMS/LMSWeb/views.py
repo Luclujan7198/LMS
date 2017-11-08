@@ -17,16 +17,9 @@ def noticia(request, noticia_id):
 
 def contato(request):
     return render(request, 'LMSWeb/contato.html')
-<<<<<<< HEAD
 
-def teste(request):
-    return render(request, 'LMSWeb/testes.html')
+def cancelamento_matricula(request):
+    return render(request, 'LMSWeb/cancelamento_matricula.html')
 
 def matriculaonline(request):
     return render(request, 'LMSWeb/matriculaonline.html')
-
-=======
-def teste(request):
-    return render(request, 'LMSWeb/testes.html')
-
->>>>>>> 8eb56aacfe950544c873caa4cc6fde065b748926
