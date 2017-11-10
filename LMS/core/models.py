@@ -14,3 +14,13 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Alunos(models.Model):
+    ra = models.IntegerField(max_length=10 default=True)
+    nome = models.CharField(max_length=200 default=True)
+    email = models.CharField(max_length=80 default=True)
+    celular = models.IntegerField(max_length=20 default=True)
+    sigla_curso = models.CharField(max_length=10 default=True)
+
+    def __str__(self):
+        return self.nome
