@@ -40,17 +40,17 @@ Cursos - {{block.super}}
     </div>
 
     <div class="curso">
-        {% for Cursos in Curso %}
-            <h4><a href="#">{{ Cursos.nome }}</a></h4>
+        {% for curso in cursos %}
+            <h4><a href="#">{{ curso.nome }}</a></h4>
             <div class="curso-info-item">
                 <img src="{% static 'img/duracao-icon-color.png' %}" />
                 <span class="field-title">Duração:</span> 
-                {{ Cursos.duracao }}
+                {{ curso.duracao }}
             </div>
             <div class="curso-info-item">
                 <img src="{% static 'img/modalidade-icon-color.png' %}" />
                 <span class="field-title">Modalidade:</span> 
-                {{ Cursos.modalidade }}
+                {{ curso.modalidade }}
             </div>
             <div class="curso-info-item">
                 <img src="{% static 'img/periodo-icon-color.png' %}" />
