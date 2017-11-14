@@ -16,11 +16,11 @@ class Curso(models.Model):
         return self.nome
 
 class Alunos(models.Model):
-    ra = models.IntegerField(max_length=10 default=True)
-    nome = models.CharField(max_length=200 default=True)
-    email = models.CharField(max_length=80 default=True)
-    celular = models.IntegerField(max_length=20 default=True)
-    sigla_curso = models.CharField(max_length=10 default=True)
+    ra = models.IntegerField(max_length=10)
+    nome = models.CharField(max_length=200)
+    email = models.CharField(max_length=80)
+    celular = models.IntegerField(max_length=20)
+    sigla_curso = models.CharField(max_length=10)
 
     def __str__(self):
         return self.nome
