@@ -19,7 +19,7 @@ class Alunos(models.Model):
     ra = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=200)
     email = models.CharField(max_length=80)
-    celular = models.IntegerField()
+    celular = models.CharField(max_length=11)
     sigla_curso = models.CharField(max_length=10)
 
     def __str__(self):
