@@ -7,6 +7,17 @@
     background-position: center;
 }
 
+
+.banner-matricula {
+    height: 340px;
+    width: 100%;
+    background-image: url('img/contato.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 .block-text {
     text-align: center;
     color: white;
