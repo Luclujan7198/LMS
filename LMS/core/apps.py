@@ -1,6 +1,6 @@
 from django.apps import AppConfig
-from models import cursos
-from models import Alunos
+from models import *
+
 
 class CoreConfig(AppConfig):
     name = 'core'
