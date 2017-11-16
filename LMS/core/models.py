@@ -18,7 +18,7 @@ class Curso(models.Model):
 class Alunos(models.Model):
     ra = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=200)
-    email = models.CharField(max_length=80)
+    email = models.EmailField(max_length=80)
     celular = models.CharField(max_length=11)
     sigla_curso = models.CharField(max_length=10)
 
