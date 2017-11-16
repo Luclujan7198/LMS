@@ -14,3 +14,16 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Alunos(models.Model):
+    ra = models.IntegerField(primary_key=True)
+    nome = models.CharField(max_length=200)
+    email = models.CharField(max_length=80)
+    celular = models.CharField(max_length=11)
+    sigla_curso = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.nome
+    class Meta():
+        verbose_name = 'Aluno'
+        verbose_name_plural = 'Alunos'
