@@ -24,7 +24,10 @@ class Disciplina(models.Model):
     bibliografia_basica = models.TextField()
     bibliografica_complementar = models.TextField()
     
-    def __str__(self):
-        return self.id_disciplina
+class DisciplinaOfertada(models.Model):
+    id_disciplina_ofertada = models.AutoField(primary_key=True)
+    ano = models.SmallIntegerField(unique=True)
+    semestre = models.CharField(unique=True, max_length=1)
+    fk_disciplina = models.ForeignKey(Disciplina)
 
 
