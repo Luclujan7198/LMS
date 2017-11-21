@@ -30,22 +30,23 @@ class Disciplina(models.Model):
     
 class DisciplinaOfertada(models.Model):
     id_disciplina_ofertada = models.AutoField(primary_key=True)
-    nome_disciplina = models.ForeignKey(Disciplina, unique=True)
-    ano = models.IntegerField(unique=True, max_length=3)
+    nome_disciplina = models.OneToOneField(Disciplina)
+    ano = models.IntegerField(unique=True)
     semestre = models.CharField(unique=True, max_length=1)
-    fk_disciplina = models.ForeignKey(Disciplina)
+    #fk_disciplina = models.ForeignKey(Disciplina)
  
     def __str__(self):
-        return self.nome
+        return self.nome_disciplina
 
 class Turma(models.Model):
-    id_nome_disciplina = models.ForeignKey(Disciplina)
-    ano_ofertado = models.ForeignKey(DisciplinaOfertada, unique=True)
-    id_turma = models.AutoField(primary_key=True, max_length=1)
+    nome_disciplina = models.ForeignKey(Disciplina)
+    ano_ofertado = models.OneToOneField(DisciplinaOfertada)
+    id_turma = models.AutoField(primary_key=True)
     turno = models.CharField(max_length=15)
     #ra_professor = models.ForeignKey(unique=True, Professor)
 
-
+    def __str__(self):
+        return self.nome_disciplina
 
 
 
