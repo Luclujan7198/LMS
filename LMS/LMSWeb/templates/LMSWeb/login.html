@@ -1,0 +1,35 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Login - {{block.super}}
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block container %}
+<div class="login">
+    <form method="post" action="{% url 'LMSWeb:login' %}">
+        {% csrf_token %}
+        <h3>Login</h3>
+        <div class="form-container">
+            <div class="form-row">
+                <label for="ra">RA:</label>
+                <input type="text" name="ra" class="form-input" autofocus/>
+            </div>
+            <div class="form-row">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" class="form-input" />
+            </div>
+            <div class="form-row">
+                <button type="submit" class="form-button form-button-principal">Login</button>
+                <!-- <button type="button" class="form-button">Voltar</button> -->
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -28,7 +28,15 @@
                 <li><a href="{% url 'LMSWeb:cursos' %}">Cursos</a></li>
                 <li><a href="{% url 'LMSWeb:noticias' %}">Notícias</a></li>
                 <li><a href="{% url 'LMSWeb:contato' %}">Contato</a></li>
-                <li class="nav-menu-right"><a href="login.html">Login</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-menu-right">
+                    <a href="{% url 'LMSWeb:logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-menu-right">
+                    <a href="{% url 'LMSWeb:login' %}">Login</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
