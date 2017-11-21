@@ -14,6 +14,7 @@ class Curso(models.Model):
 
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True) 
+    nome = models.CharField(max_length=240, unique=True)
     carga_horaria = models.IntegerField()
     teoria = models.DecimalField(decimal_places=3, max_digits=3)
     pratica = models.DecimalField(decimal_places=3, max_digits=3) 
@@ -23,11 +24,28 @@ class Disciplina(models.Model):
     conteudo = models.TextField()
     bibliografia_basica = models.TextField()
     bibliografica_complementar = models.TextField()
+
+    def __str__(self):
+        return self.nome
     
 class DisciplinaOfertada(models.Model):
     id_disciplina_ofertada = models.AutoField(primary_key=True)
-    ano = models.SmallIntegerField(unique=True)
+    nome_disciplina = models.ForeignKey(Disciplina, unique=True)
+    ano = models.IntegerField(unique=True, max_length=3)
     semestre = models.CharField(unique=True, max_length=1)
     fk_disciplina = models.ForeignKey(Disciplina)
+ 
+    def __str__(self):
+        return self.nome
+
+class Turma(models.Model):
+    id_nome_disciplina = models.ForeignKey(Disciplina)
+    ano_ofertado = models.ForeignKey(DisciplinaOfertada, unique=True)
+    id_turma = models.AutoField(primary_key=True, max_length=1)
+    turno = models.CharField(max_length=15)
+    #ra_professor = models.ForeignKey(unique=True, Professor)
+
+
+
 
 
