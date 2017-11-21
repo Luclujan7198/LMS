@@ -1,10 +1,14 @@
 from django.shortcuts import render
+from core.models import Curso
 
 def index(request):
     return render(request, 'LMSWeb/index.html')
 
 def cursos(request):
-    return render(request, 'LMSWeb/cursos.html')
+    contexto = {
+        "cursos": Curso.objects.all()
+    }
+    return render(request, 'LMSWeb/cursos.html', contexto)
 
 def curso(request, curso_id):
     return render(request, 'LMSWeb/curso.html', { 'curso_id': curso_id })
