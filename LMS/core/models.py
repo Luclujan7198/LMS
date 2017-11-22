@@ -14,7 +14,7 @@ class Curso(models.Model):
 
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True) 
-    nome = models.CharField(max_length=240, unique=True)
+    nome = models.CharField(max_length=240, unique=True, default='')
     carga_horaria = models.IntegerField()
     teoria = models.DecimalField(decimal_places=3, max_digits=3)
     pratica = models.DecimalField(decimal_places=3, max_digits=3) 
@@ -30,13 +30,13 @@ class Disciplina(models.Model):
     
 class DisciplinaOfertada(models.Model):
     id_disciplina_ofertada = models.AutoField(primary_key=True)
-    nome_disciplina = models.OneToOneField(Disciplina)
+    nome_disciplina = models.OneToOneField(Disciplina,default='')
     ano = models.IntegerField(unique=True)
     semestre = models.CharField(unique=True, max_length=1)
     #fk_disciplina = models.ForeignKey(Disciplina)
  
     def __str__(self):
-        return self.nome_disciplina
+        return self.nome_disciplina.nome
 
 class Turma(models.Model):
     nome_disciplina = models.ForeignKey(Disciplina)
@@ -46,7 +46,7 @@ class Turma(models.Model):
     #ra_professor = models.ForeignKey(unique=True, Professor)
 
     def __str__(self):
-        return self.nome_disciplina
+        return self.nome_disciplina.nome 
 
 
 
