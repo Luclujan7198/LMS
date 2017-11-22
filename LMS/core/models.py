@@ -96,12 +96,12 @@ class Questao(models.Model):
     def __str__(self):
         return self.turma + ' - ' + str(self.numero)
 
-def monta_arquivo(questao, nome_arquivo):
+def monta_arquivo_questao(questao, nome_arquivo):
     return "{}/{}/{}".format(questao.turma, questao.numero, nome_arquivo)
 
 class ArquivosQuestao(models.Model):
     questao = models.ForeignKey(Questao)
-    arquivo = models.FileField(upload_to=monta_arquivo)
+    arquivo = models.FileField(upload_to=monta_arquivo_questao)
 
     class Meta:
         unique_together = (('questao', 'arquivo'),)
