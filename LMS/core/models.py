@@ -79,3 +79,47 @@ class Periodo(models.Model):
 
     def __str__(self):
         return self.cursos.nome
+
+class CursoTurma(models.Model):
+    curso = models.ForeignKey(Curso)
+    turma = models.ForeignKey(Turma)
+
+    class Meta:
+        unique_together = (('curso', 'turma'),)
+
+    def __str__(self):
+        return self.curso + self.turma
+
+class PeriodoDisciplina(models.Model):
+    periodo = ForeignKey(Periodo)
+    disciplina = ForeignKey(Disciplina)
+
+    class Meta:
+        unique_together = (('periodo','disciplina'),)
+
+    def __str__(self): 
+        return self.periodo + self.disciplina
+class Resposta(self):
+    questao = models.ForeignKey(Questao)
+    aluno = models.ForeignKey(Aluno)
+    data_avaliacao = models.dateField()
+    nota = models.decimalField(decimal_places=4,max_digits=2)
+    avaliacao = models.TextField()
+    descricao = models.TextField()
+    data_de_envio = models.dateField()
+
+    class Meta:
+        unique_together = (('questao','aluno'),)
+
+    def __str__(self):
+        return self.nota
+
+class ArquivosResposta(self):
+    resposta = models.ForeignKey(Resposta)
+    arquivo = models.FileField(upload_to=monta_arquivo_resposta)
+
+    class Meta(self):
+        unique_together = (('resposta','arquivo'),)
+    
+    def __str__(self):
+        return self.arquivo
