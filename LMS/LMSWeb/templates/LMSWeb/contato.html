@@ -20,6 +20,7 @@ Contato - {{block.super}}
 
 <div class="contato">
     <form method="post">
+        {% csrf_token %}
         <h3>Entre em contato</h3>
         <div class="form-container">
             <div class="form-row">
