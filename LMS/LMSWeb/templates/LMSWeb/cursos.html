@@ -19,7 +19,9 @@ Cursos - {{block.super}}
 </div>
 
 <div class="cursos">
+    
     <div class="curso">
+        
         <h4><a href="{% url 'LMSWeb:curso' 1 %}">Administração</a></h4>
         <div class="curso-info-item">
             <img src="{% static 'img/duracao-icon-color.png' %}" />
@@ -37,82 +39,27 @@ Cursos - {{block.super}}
             matutino, noturno
         </div>
     </div>
-
+    {% for curso in cursos %}
     <div class="curso">
-        <h4><a href="#">Análise e desenvolvimento de sistemas</a></h4>
-        <div class="curso-info-item">
-            <img src="{% static 'img/duracao-icon-color.png' %}" />
-            <span class="field-title">Duração:</span> 
-            5 semestres
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/modalidade-icon-color.png' %}" />
-            <span class="field-title">Modalidade:</span> 
-            Presencial
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/periodo-icon-color.png' %}" />
-            <span class="field-title">Período(s):</span> 
-            matutino, noturno
-        </div>
+        
+            <h4><a href="#">{{ curso.nome }}</a></h4>
+            <div class="curso-info-item">
+                <img src="{% static 'img/duracao-icon-color.png' %}" />
+                <span class="field-title">Duração:</span> 
+                {{ curso.duracao }}
+            </div>
+            <div class="curso-info-item">
+                <img src="{% static 'img/modalidade-icon-color.png' %}" />
+                <span class="field-title">Modalidade:</span> 
+                {{ curso.modalidade }}
+            </div>
+            <div class="curso-info-item">
+                <img src="{% static 'img/periodo-icon-color.png' %}" />
+                <span class="field-title">Período(s):</span> 
+                matutino, noturno
+            </div>     
     </div>
-
-    <div class="curso">
-        <h4><a href="#">Redes de computadores</a></h4>
-        <div class="curso-info-item">
-            <img src="{% static 'img/duracao-icon-color.png' %}" />
-            <span class="field-title">Duração:</span> 
-            6 semestres
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/modalidade-icon-color.png' %}" />
-            <span class="field-title">Modalidade:</span> 
-            Presencial
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/periodo-icon-color.png' %}" />
-            <span class="field-title">Período(s):</span> 
-            noturno
-        </div>
-    </div>
-
-    <div class="curso">
-        <h4><a href="#">Gestão de Projetos</a></h4>
-        <div class="curso-info-item">
-            <img src="{% static 'img/duracao-icon-color.png' %}" />
-            <span class="field-title">Duração:</span> 
-            4 semestres
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/modalidade-icon-color.png' %}" />
-            <span class="field-title">Modalidade:</span> 
-            EAD
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/periodo-icon-color.png' %}" />
-            <span class="field-title">Período(s):</span> 
-            matutino, vespertino, noturno
-        </div>
-    </div>
-
-    <div class="curso">
-        <h4><a href="#">Design</a></h4>
-        <div class="curso-info-item">
-            <img src="{% static 'img/duracao-icon-color.png' %}" />
-            <span class="field-title">Duração:</span> 
-            6 semestres
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/modalidade-icon-color.png' %}" />
-            <span class="field-title">Modalidade:</span> 
-            Presencial
-        </div>
-        <div class="curso-info-item">
-            <img src="{% static 'img/periodo-icon-color.png' %}" />
-            <span class="field-title">Período(s):</span> 
-            matutino, noturno
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
