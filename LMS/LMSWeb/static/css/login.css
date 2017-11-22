@@ -87,3 +87,8 @@ select:focus, select:active,
 textarea:focus, textarea:active {
     outline:0;
 }
+
+.error-message {
+    padding: 10px 0px;
+    color: red;
+}

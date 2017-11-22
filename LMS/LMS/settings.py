@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'LMS_Professor.apps.LmsProfessorConfig',
     'Auth.apps.AuthConfig',
+    'LMS_Aluno.apps.LmsAlunoConfig',
 ]
 
 MIDDLEWARE = [

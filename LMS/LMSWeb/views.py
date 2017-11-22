@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 def index(request):
@@ -28,6 +27,8 @@ def matriculaonline(request):
     return render(request, 'LMSWeb/matriculaonline.html')
 
 def login(request):
+    error = None
+
     if request.method == "POST":
         ra = request.POST['ra']
         password = request.POST['password']
@@ -36,14 +37,20 @@ def login(request):
             auth_login(request, user)
 
             if user.groups.filter(name='Professores').exists():
-                return HttpResponseRedirect(reverse('LMS_Professor:index'))
+                return redirect(reverse('LMS_Professor:index'))
+            elif user.groups.filter(name='Coordenadores').exists():
+                return redirect(reverse('admin:index'))
+            elif user.groups.filter(name='Alunos').exists():
+                return redirect(reverse('LMS_Aluno:index'))
             else:
-                return HttpResponseRedirect(reverse('admin:index'))
+                error = "Usuário não pertence a nenhum grupo"
         else:
-            errorMessage = 'Login Inválido'
-            return render(request, 'LMSWeb/login.html', {'errorMessage': errorMessage})
+            error = "Usuário ou senha inválidos"
     else:
-        return render(request, 'LMSWeb/login.html')
+        if request.user.is_authenticated:
+            return redirect(reverse('LMSWeb:index'))
+
+    return render(request, 'LMSWeb/login.html', {'error': error})
 
 def logout(request):
     auth_logout(request)
