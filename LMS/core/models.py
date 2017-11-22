@@ -30,10 +30,19 @@ class Alunos(models.Model):
         verbose_name_plural = 'Alunos'
 
 class GradeCurricular(models.Model):
-    id_grade = models.AutoField(primary_key=True)
-    sigla_curso = models.CharField(max_length=5, unique=True)
-    ano = models.SmallIntegerField(unique=True)
+    curso = models.OneToOneField(Curso, default=True)
+    ano = models.IntegerField(unique=True)
     semestre = models.CharField(max_length=1, unique=True)
+    class Meta():
+        verbose_name = 'Grade Curricular'
+        verbose_name_plural = 'Grades Curriculares'
 
     def __str__(self):
-        return self.sigla_curso
+        return self.curso.nome
+
+class Periodo(models.Model):
+    cursos = models.OneToOneField(Curso)
+    numero = models.IntegerField(primary_key=True)
+
+    def __str__(self):
+        return self.cursos.nome
