@@ -8,4 +8,4 @@ admin.site.register(DisciplinaOfertada)
 admin.site.register(Turma)
 admin.site.register(Alunos)
 admin.site.register(GradeCurricular)
-
+admin.site.register(Periodo)
