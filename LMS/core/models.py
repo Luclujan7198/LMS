@@ -1,13 +1,12 @@
 from django.db import models
-
-# Create your models here.
-
+from Auth.models import Professor, Aluno
 
 class Curso(models.Model):
-    id_curso = models.AutoField(primary_key=True)
-    sigla = models.CharField(max_length=10, default='')
-    nome = models.CharField(unique=True, max_length=200)
+    sigla = models.CharField(max_length=10)
+    nome = models.CharField(max_length=200)
 
+    class Meta:
+        unique_together = (('sigla', 'nome'),)
 
     def __str__(self):
         return self.nome
@@ -27,55 +26,85 @@ class Disciplina(models.Model):
 
     def __str__(self):
         return self.nome
-    
+
 class DisciplinaOfertada(models.Model):
-    id_disciplina_ofertada = models.AutoField(primary_key=True)
-    nome_disciplina = models.OneToOneField(Disciplina,default='')
-    ano = models.IntegerField(unique=True)
-    semestre = models.CharField(unique=True, max_length=1)
-    #fk_disciplina = models.ForeignKey(Disciplina)
- 
+    disciplina = models.ForeignKey(Disciplina)
+    ano = models.IntegerField()
+    semestre = models.CharField(max_length=1)
+
+    class Meta:
+        unique_together = (('disciplina', 'ano', 'semestre'),)
+    
     def __str__(self):
-        return self.nome_disciplina.nome
+        return self.disciplina + ' - ' + str(self.ano) + ' - ' + self.semestre
 
 class Turma(models.Model):
-    nome_disciplina = models.ForeignKey(Disciplina)
-    ano_ofertado = models.OneToOneField(DisciplinaOfertada)
-    id_turma = models.AutoField(primary_key=True)
+    disciplina_ofertada = models.ForeignKey(DisciplinaOfertada)
+    id_turma = models.CharField(max_length=1)
     turno = models.CharField(max_length=15)
-    #ra_professor = models.ForeignKey(unique=True, Professor)
+    professor = models.ForeignKey(Professor)
+
+    class Meta:
+        unique_together = (('disciplina_ofertada', 'id'),)
 
     def __str__(self):
-        return self.nome_disciplina.nome 
-
-class Alunos(models.Model):
-    ra = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=200)
-    email = models.EmailField(max_length=80)
-    celular = models.CharField(max_length=11)
-    sigla_curso = models.CharField(max_length=10)
-
-    def __str__(self):
-        return str(self.ra)
-
-    class Meta():
-        verbose_name = 'Aluno'
-        verbose_name_plural = 'Alunos'
+        return self.disciplina_ofertada + ' - ' + self.id_turma
 
 class GradeCurricular(models.Model):
-    curso = models.OneToOneField(Curso, default=True)
-    ano = models.IntegerField(unique=True)
-    semestre = models.CharField(max_length=1, unique=True)
+    curso = models.ForeignKey(Curso)
+    ano = models.IntegerField()
+    semestre = models.CharField(max_length=1)
+
     class Meta():
+        unique_together = (('curso', 'ano', 'semestre'),)
         verbose_name = 'Grade Curricular'
         verbose_name_plural = 'Grades Curriculares'
 
     def __str__(self):
-        return self.curso.nome
+        return self.curso + ' - ' + str(self.ano) + ' - ' + self.semestre
 
 class Periodo(models.Model):
-    cursos = models.OneToOneField(Curso)
-    numero = models.IntegerField(primary_key=True)
+    grade_curricular = models.ForeignKey(GradeCurricular)
+    numero = models.IntegerField()
+
+    class Meta:
+        unique_together = (("grade_curricular", "numero"),)
 
     def __str__(self):
-        return self.cursos.nome
+        return self.grade_curricular + ' - ' + str(self.numero)
+
+class Matricula(models.Model):
+    aluno = models.ForeignKey(Aluno)
+    turma = models.ForeignKey(Turma)
+
+    class Meta:
+        unique_together = (('aluno', 'turma'),)
+
+    def __str__(self):
+        return self.aluno + ' - ' + self.turma
+
+class Questao(models.Model):
+    turma = models.ForeignKey(turma)
+    numero = models.IntegerField()
+    data_limite_entrega = models.DateField()
+    descricao = models.TextField()
+    data = models.DateField(auto_now=True)
+
+    class Meta:
+        unique_together = (('turma', 'numero'),)
+
+    def __str__(self):
+        return self.turma + ' - ' + str(self.numero)
+
+def monta_arquivo(questao, nome_arquivo):
+    return "{}/{}/{}".format(questao.turma, questao.numero, nome_arquivo)
+
+class ArquivosQuestao(models.Model):
+    questao = models.ForeignKey(Questao)
+    arquivo = models.FileField(upload_to=monta_arquivo)
+
+    class Meta:
+        unique_together = (('questao', 'arquivo'),)
+
+    def __str__(self):
+        return self.questao
