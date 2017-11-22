@@ -19,45 +19,24 @@ Cursos - {{block.super}}
 </div>
 
 <div class="cursos">
-    
+    {% for curso in cursos %}
     <div class="curso">
-        
-        <h4><a href="{% url 'LMSWeb:curso' 1 %}">Administração</a></h4>
+        <h4><a href="#">{{ curso.nome }}</a></h4>
         <div class="curso-info-item">
             <img src="{% static 'img/duracao-icon-color.png' %}" />
             <span class="field-title">Duração:</span> 
-            5 semestres
+            {{ curso.duracao }}
         </div>
         <div class="curso-info-item">
             <img src="{% static 'img/modalidade-icon-color.png' %}" />
             <span class="field-title">Modalidade:</span> 
-            Presencial
+            {{ curso.modalidade }}
         </div>
         <div class="curso-info-item">
             <img src="{% static 'img/periodo-icon-color.png' %}" />
             <span class="field-title">Período(s):</span> 
             matutino, noturno
-        </div>
-    </div>
-    {% for curso in cursos %}
-    <div class="curso">
-        
-            <h4><a href="#">{{ curso.nome }}</a></h4>
-            <div class="curso-info-item">
-                <img src="{% static 'img/duracao-icon-color.png' %}" />
-                <span class="field-title">Duração:</span> 
-                {{ curso.duracao }}
-            </div>
-            <div class="curso-info-item">
-                <img src="{% static 'img/modalidade-icon-color.png' %}" />
-                <span class="field-title">Modalidade:</span> 
-                {{ curso.modalidade }}
-            </div>
-            <div class="curso-info-item">
-                <img src="{% static 'img/periodo-icon-color.png' %}" />
-                <span class="field-title">Período(s):</span> 
-                matutino, noturno
-            </div>     
+        </div>     
     </div>
     {% endfor %}
 </div>
