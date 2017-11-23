@@ -84,7 +84,7 @@ class Matricula(models.Model):
         return self.aluno + ' - ' + self.turma
 
 class Questao(models.Model):
-    turma = models.ForeignKey(turma)
+    turma = models.ForeignKey(Turma)
     numero = models.IntegerField()
     data_limite_entrega = models.DateField()
     descricao = models.TextField()
@@ -120,8 +120,8 @@ class CursoTurma(models.Model):
         return self.curso + self.turma
 
 class PeriodoDisciplina(models.Model):
-    periodo = ForeignKey(Periodo)
-    disciplina = ForeignKey(Disciplina)
+    periodo = models.ForeignKey(Periodo)
+    disciplina = models.ForeignKey(Disciplina)
 
     class Meta:
         unique_together = (('periodo','disciplina'),)
@@ -132,11 +132,11 @@ class PeriodoDisciplina(models.Model):
 class Resposta(models.Model):
     questao = models.ForeignKey(Questao)
     aluno = models.ForeignKey(Aluno)
-    data_avaliacao = models.dateField()
-    nota = models.decimalField(decimal_places=4,max_digits=2)
+    data_avaliacao = models.DateField()
+    nota = models.DecimalField(decimal_places=2,max_digits=4)
     avaliacao = models.TextField()
     descricao = models.TextField()
-    data_de_envio = models.dateField()
+    data_de_envio = models.DateField(auto_now=True)
 
     class Meta:
         unique_together = (('questao','aluno'),)
