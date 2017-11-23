@@ -108,3 +108,51 @@ class ArquivosQuestao(models.Model):
 
     def __str__(self):
         return self.questao
+
+class CursoTurma(models.Model):
+    curso = models.ForeignKey(Curso)
+    turma = models.ForeignKey(Turma)
+
+    class Meta:
+        unique_together = (('curso', 'turma'),)
+
+    def __str__(self):
+        return self.curso + self.turma
+
+class PeriodoDisciplina(models.Model):
+    periodo = ForeignKey(Periodo)
+    disciplina = ForeignKey(Disciplina)
+
+    class Meta:
+        unique_together = (('periodo','disciplina'),)
+
+    def __str__(self): 
+        return self.periodo + ' - ' + self.disciplina
+
+class Resposta(models.Model):
+    questao = models.ForeignKey(Questao)
+    aluno = models.ForeignKey(Aluno)
+    data_avaliacao = models.dateField()
+    nota = models.decimalField(decimal_places=4,max_digits=2)
+    avaliacao = models.TextField()
+    descricao = models.TextField()
+    data_de_envio = models.dateField()
+
+    class Meta:
+        unique_together = (('questao','aluno'),)
+
+    def __str__(self):
+        return self.nota
+
+def monta_arquivo_resposta(resposta, nome_arquivo):
+    return "{}/{}/{}".format(resposta.questao, resposta.aluno, nome_arquivo)
+
+class ArquivosResposta(models.Model):
+    resposta = models.ForeignKey(Resposta)
+    arquivo = models.FileField(upload_to=monta_arquivo_resposta)
+
+    class Meta:
+        unique_together = (('resposta','arquivo'),)
+    
+    def __str__(self):
+        return self.resposta + ' - ' + self.arquivo
