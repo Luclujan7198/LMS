@@ -1,0 +1,94 @@
+.login {
+    padding: 30px;
+}
+
+form {
+    width: 80%;
+    max-width: 1200px;
+    padding: 10px 30px;
+}
+
+form .form-container {
+    padding: 0;
+    max-width: 800px;
+}
+
+form .form-container .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form .form-container .form-row:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+form .form-container .form-row label {
+    flex: 1 0 120px;
+    max-width: 220px;
+    color: #2c3954;
+}
+
+form .form-container .form-row .form-input {
+    flex: 1 0 250px;
+    max-width: 250px;
+}
+
+form h3 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: -15px;
+}
+
+form .form-button {
+    border: 0;
+    padding: 7px 15px;
+    margin-right: 5px;
+    background-color: #c7c7c7;
+}
+
+form .form-button:hover {
+    background-color: #d7d7d7;
+}
+
+form .form-button-principal:hover {
+    background-color: #3d4b67;
+}
+
+form .form-button-principal {
+    border: 0;
+    color: white;
+    background-color: #2c3954;
+}
+
+@media (max-width: 507px) {
+    form, .form-container {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    form .form-container .form-row label {
+        margin-bottom: 7px;
+    }
+
+    form .form-container .form-row .form-input {
+        max-width: none;
+    }
+}
+
+input, select, textarea {
+    border: 1px solid #9ea6b7;
+    padding: 7px;
+    border-radius: 3px;
+}
+
+input:focus, input:active, 
+select:focus, select:active, 
+textarea:focus, textarea:active {
+    outline:0;
+}
+
+.error-message {
+    padding: 10px 0px;
+    color: red;
+}

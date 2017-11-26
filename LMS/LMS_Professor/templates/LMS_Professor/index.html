@@ -1,0 +1,17 @@
+{% extends 'LMSWeb/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}
+Professor - {{block.super}}
+{% endblock%}
+
+{% block container %}
+<div>
+    <h1>Home professor!</h1>
+</div>
+{% endblock %}

@@ -1,10 +1,9 @@
 from django.conf.urls import url
 from . import views
 
-app_name = 'LMS_Professor'
+app_name = 'LMS_Aluno'
 
 
 urlpatterns = [
-    url(r'^testes/$', views.teste, name='teste'),
     url(r'^$', views.index, name='index'),
 ]

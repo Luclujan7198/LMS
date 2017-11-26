@@ -20,6 +20,7 @@ Contato - {{block.super}}
 
 <div class="contato">
     <form method="post">
+        {% csrf_token %}
         <h3>Entre em contato</h3>
         <div class="form-container">
             <div class="form-row">
@@ -31,7 +32,7 @@ Contato - {{block.super}}
                 <input type="email" name="email" class="form-input" />
             </div>
             <div class="form-row">
-                <label for="assunto">Asunto:</label>
+                <label for="assunto">Assunto:</label>
                 <select name="assunto" class="form-input">
                     <option value="">-- Selecione o assunto --</option>
                     <option value="ads">Informação sobre as aulas</option>
