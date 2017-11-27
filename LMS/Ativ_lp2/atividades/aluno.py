@@ -3,6 +3,7 @@ from disciplina import *
 
 class Aluno(Disciplina):
     materia = 'ingles'
+    tarefa = None
 
     def __init__(self, nome, ra):
         self.contador_de_testes = Matematica.contador_de_testes
@@ -11,7 +12,10 @@ class Aluno(Disciplina):
 
 
     def enviar_tarefa(self):
-        return True
+        if not self.tarefa:
+            return print('Tarefa não enviada')
+        else:
+            return print('Tarefa enviada')
 
     def verificador_de_teste(self):
         if Matematica.contador_de_testes == 0:
@@ -30,5 +34,6 @@ class Aluno(Disciplina):
 aluno = Aluno('lucas',1233215)
 print(aluno.verificador_de_teste())
 print(aluno.matricula('ingles'))
-    
+print(aluno.enviar_tarefa())
+
 
