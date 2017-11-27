@@ -2,7 +2,8 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
-from .models import Usuario, Aluno, Professor
+from .models import Usuario
+from core.models import Aluno, Professor
 
 class NovoAlunoForm(forms.ModelForm):
     class Meta:

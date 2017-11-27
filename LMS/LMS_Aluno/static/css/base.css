@@ -1,0 +1,115 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: darkblue;
+    font-weight: bold;
+}
+
+a:visited { color: darkblue; }
+
+.content { padding: 15px; }
+
+footer {
+    background: gray;
+    padding: 15px;
+    color: #fdfdfd;
+}
+
+/* NAVBAR */
+nav { background-color: #f3f3f3; }
+
+nav .navbar-header .logo { float: left; }
+
+nav .navbar-header .logo a {
+    display: block;
+    color: #333;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav .navbar-header .logo a:hover {
+    background-color: #f3f3f3;
+    text-decoration: none;
+}
+
+nav .navbar-header .logo a img {
+    height: 29px; 
+    width: auto;
+}
+
+nav .navbar-header .navbar-toggle {
+    font-size: 13px;
+    float: right;
+    display: none;
+}
+
+nav .navbar-header .navbar-toggle a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 22px 16px;
+    text-decoration: none;
+}
+
+nav .navbar-header .navbar-toggle a:hover { background-color: #ddd; }
+
+@-webkit-keyframes openAnimation {
+    from { max-height: 0; }
+      to { max-height: 500px; }
+}  
+@keyframes openAnimation {
+    from { max-height: 0; }
+      to { max-height: 500px; }
+}
+
+nav .nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    animation: openAnimation .5s;
+}
+
+nav .nav-menu .nav-menu-right { float: right; }
+
+nav .nav-menu li { float: left; }
+
+nav .nav-menu li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 21px 16px;
+    text-decoration: none;
+}
+
+nav .nav-menu li a:hover {
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 600px) {
+    nav .nav-menu { width: 100%; }
+    
+    nav .nav-menu li, nav .nav-menu .nav-menu-right { float: none; }
+
+    .menu-hidden { display: none; }
+
+    .navbar-header {
+        display: block;
+        height: 61px;
+    }
+
+    nav .navbar-header .navbar-toggle { display: block; }
+}
+/* FIM NAVBAR */
