@@ -17,15 +17,27 @@ class Matematica(Disciplina):
 
     def Media_Boletim(self):
         return(self.nota1 + self.nota2) /2
+    
+    def verificador_matricula(self):
+        media_alunos = [6.25,5.0]
+        media = Media_Boletim()
+        if media > max(media_alunos):
+            return True
+        else:
+            return False
 
     def matricular(self):
-        if self.matriculados < 40:
+        if verificador_matricula() == True:
+            self.matriculados = self.matriculados + 1
+            return print('matriculado com sucesso!')
+        elif self.matriculados < 40:
             self.matriculados = self.matriculados + 1
             return print('matriculado com sucesso!')
         else:
             return print('Impossivel matricula nessa materia! \nTurmas ja preenchida!')
-        
-    
+            
+                
+
     def aumentar_contador_de_testes(self):
         self.contador_de_testes + 1
 
