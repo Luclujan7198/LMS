@@ -5,7 +5,10 @@ class Aluno():
 
     def realizou_teste(self, data_teste):
         questoes_teste = ['1', '2', '3'] # Questao.objects.filter(data=data_teste)
-        contador_resposta = 0 # Reposta.objects.filter(questao=questao).count()
+
+        contador_resposta = 0
+        for questao in questoes_teste:
+            contador_resposta += Resposta.objects.filter(questao=questao).count()
 
         if contador_resposta == 0:
             return False
