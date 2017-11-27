@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} LMS {% endblock %}</title>
+
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    {% block css %} {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="{% url 'LMSWeb:index' %}">
+                        <img src="{% static 'img/logo_orion.png' %}" />
+                    </a>
+                </div>
+                <div class="navbar-toggle">
+                    <a href="javascript:void(0)" onclick="toggleNavBar()" class="toggle">&#9776;</a>
+                </div>
+            </div>
+            <ul class="nav-menu menu-hidden" id="nav-menu">
+                <li><a href="{% url 'LMS_Aluno:index' %}">Home</a></li>
+                <li><a href="{% url 'LMS_Aluno:boletim' %}">Boletim</a></li>
+                <!-- <li><a href="{% url 'LMSWeb:noticias' %}">Notícias</a></li>
+                <li><a href="{% url 'LMSWeb:contato' %}">Contato</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-menu-right">
+                    <a href="{% url 'LMSWeb:logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-menu-right">
+                    <a href="{% url 'LMSWeb:login' %}">Login</a>
+                </li>
+                {% endif %} -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block container %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>©Copyright - Todos os direitos reservados - 2017</p>
+    </footer>
+
+    
+    <script src="{% static 'js/site.js '%}" type="text/javascript"></script>
+    {% block js %} {% endblock %}
+</body>
+</html>
