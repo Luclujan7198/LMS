@@ -52,26 +52,3 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     @property
     def is_staff(self):
         return self.groups.filter(name='Coordenadores').exists()
-
-class Aluno(Usuario):
-    usuario_id = models.OneToOneField(
-        Usuario,
-        primary_key=True,
-        db_column='usuario_id',
-        parent_link=True
-    )
-
-    curso = models.CharField(max_length=200, blank=True, null=True)
-
-class Professor(Usuario):
-    class Meta:
-        verbose_name_plural = 'professores'
-        
-    usuario_id = models.OneToOneField(
-        Usuario,
-        primary_key=True,
-        db_column='usuario_id',
-        parent_link=True
-    )
-
-    telefone = models.CharField(max_length=11, blank=True, null=True)
