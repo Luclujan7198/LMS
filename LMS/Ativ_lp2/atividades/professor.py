@@ -1,15 +1,16 @@
-from aluno import Aluno
-
-class professor(Aluno):
+class Professor():
     def __init__(self,nome, ra):
         self.nome = nome
         self.ra = ra
 
-    def receber_tarefa(self):
-        if not Aluno.tarefa:
-            return print('tarefa não recebida')
-        else:
-            return print('tarefa recebida')
+    def confirmar_matricula(self, matricula):
+        pode_matricular = matricula.verificar_matricula()
 
-professor = professor('alguem',123321)
-print(professor.receber_tarefa())
+        return pode_matricular
+        # if pode_matricular:
+        #     print('Matriculado')
+        # else:
+        #     print('Impossível matricular nessa matéria!')
+
+
+
